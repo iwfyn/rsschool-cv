@@ -48,16 +48,16 @@
             
             for k = 1:NoS
                 new_len = 0:99; % number of data values within a single cycle
-                data_len = []; % a variable in which linearly distributed data values will be written in each of the motor cycles            
+                data_len = []; % a variable in which linearly distributed data values will be written in each of the motor cycles
                 for FHM = 1:3 % a variable that will determine the number of foot segments to order     (Foot, Heel, Metatarsal)
                     data_len(FHM,:) = linspace(0,99,length(FORCE_DATA(fix(StartCycle(k)):fix(EndCycle(k)))));
                     FORCE_DATA_normed(FHM,:) = spline(data_len(FHM,:), FORCE_DATA(fix(StartCycle(k)):fix(EndCycle(k)),FHM),new_len); % spline data on three segments of the foot (Foot, Heel, Metatarsal)
                 end
                 % recording of all normalized motor cycles for each segment in the corresponding variable
-                norm_FORCE_DATA_F(:,k) = FORCE_DATA_normed(1,:);      
-                norm_FORCE_DATA_H(:,k) = FORCE_DATA_normed(2,:);   
+                norm_FORCE_DATA_F(:,k) = FORCE_DATA_normed(1,:);
+                norm_FORCE_DATA_H(:,k) = FORCE_DATA_normed(2,:);
                 norm_FORCE_DATA_M(:,k) = FORCE_DATA_normed(3,:);
-            end    
+            end
     </code>
     </pre>
 
