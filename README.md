@@ -1,1 +1,1 @@
-# rsschool-cv
+https://iwfyn.github.io/rsschool-cv/cv
